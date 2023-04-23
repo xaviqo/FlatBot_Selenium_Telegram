@@ -7,7 +7,7 @@ import lombok.Getter;
 @Getter
 public enum PropertyType {
     PISO("piso"),
-    ATICO("atico"),
+    ATICO("ático"),
     CASA("casa"),
     ESTUDIO("estudio"),
     DUPLEX("dúplex"),

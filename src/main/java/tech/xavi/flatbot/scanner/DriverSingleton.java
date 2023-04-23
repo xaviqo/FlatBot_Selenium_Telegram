@@ -23,6 +23,10 @@ public class DriverSingleton {
                 options.setExperimentalOption("useAutomationExtension", false);
                 options.addArguments("--disable-extensions");
                 options.addArguments("--incognito");
+                options.addArguments("--headless");
+                options.addArguments("--disable-gpu");
+                options.addArguments("--no-sandbox");
+                options.addArguments("--disable-dev-shm-usage");
 
                 ChromeDriver driver = new ChromeDriver(options);
                 driver.executeCdpCommand("Network.setUserAgentOverride", Collections.singletonMap("userAgent",

@@ -33,7 +33,10 @@ public class ScanService {
         driver.manage().window().maximize();
 
         // pulsar aceptar cookies
-        driver.findElement(By.xpath("/html/body/div[1]/div/div/div/div/div[2]/button[2]")).click();;
+        try {
+            driver.findElement(By.xpath("/html/body/div[1]/div/div/div/div/div[2]/button[2]")).click();
+        } catch (NoSuchElementException ignored){
+        }
 
         Set<Ad> scannedAds = new HashSet<>();
         boolean keepScanning;
@@ -54,6 +57,8 @@ public class ScanService {
             }
 
         } while (keepScanning);
+
+        driver.close();
 
         return scannedAds;
 
