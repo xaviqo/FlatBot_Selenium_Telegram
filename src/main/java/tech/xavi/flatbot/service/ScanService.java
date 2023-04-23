@@ -8,8 +8,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
+import tech.xavi.flatbot.configuration.DriverConfiguration;
 import tech.xavi.flatbot.entity.Ad;
-import tech.xavi.flatbot.scanner.DriverSingleton;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -27,7 +27,12 @@ public class ScanService {
 
     public Set<Ad> scanAds(){
 
-        ChromeDriver driver = DriverSingleton.getInstance();
+        ChromeDriver driver = DriverConfiguration.getDriver();
+
+        if (driver == null){
+            log.error("Driver could not be configured, unsuccessful attempt");
+            return new HashSet<>();
+        }
 
         driver.get(URL_TO_SCAN);
         driver.manage().window().maximize();

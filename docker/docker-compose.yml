@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: flatbot
+      POSTGRES_PASSWORD: 1337
+      POSTGRES_DB: flatbot
+    ports:
+      - "5432:5432"
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+
+  app:
+    build: .
+    depends_on:
+      - db
+    command: java -jar flatbot-1.0.0.jar
+
+volumes:
+  dbdata:

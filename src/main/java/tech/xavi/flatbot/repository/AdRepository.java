@@ -6,6 +6,9 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import tech.xavi.flatbot.entity.Ad;
 
+import java.util.List;
+import java.util.Set;
+
 @Repository
 public interface AdRepository extends JpaRepository<Ad,String> {
 
@@ -14,4 +17,10 @@ public interface AdRepository extends JpaRepository<Ad,String> {
 
     @Query("SELECT a.price FROM Ad a WHERE a.id = :id")
     int findPriceById(String id);
+
+    @Query("SELECT a.id FROM Ad a")
+    List<String> findAllIds();
+
+    void deleteByIdIn(Set<String> ids);
+
 }

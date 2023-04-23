@@ -15,6 +15,7 @@ import tech.xavi.flatbot.util.IdGenerator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -75,6 +76,22 @@ public class AdService {
             }
         });
         return filteredAds;
+    }
+
+    public int removeOldAds(Set<Ad> allPresentAds){
+        List<String> dbAdsIds = adRepository.findAllIds();
+
+        Set<String> presentAdsIds = allPresentAds.stream()
+                .map(Ad::getId)
+                .collect(Collectors.toSet());
+
+        Set<String> missingAdsIds = presentAdsIds.stream()
+                .filter(id -> !dbAdsIds.contains(id))
+                .collect(Collectors.toSet());
+
+        adRepository.deleteByIdIn(missingAdsIds);
+
+        return missingAdsIds.size();
     }
 
     private int getOnlyDigits(String str) throws NumberFormatException {

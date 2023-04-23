@@ -10,7 +10,7 @@
     </parent>
     <groupId>tech.xavi</groupId>
     <artifactId>flatbot</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>flatbot</name>
     <description>flatbot</description>
     <properties>

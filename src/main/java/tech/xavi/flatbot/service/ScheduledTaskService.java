@@ -7,7 +7,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StopWatch;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import tech.xavi.flatbot.dto.FilteredAds;
+import tech.xavi.flatbot.entity.Ad;
 
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 @Service
@@ -21,12 +23,10 @@ public class ScheduledTaskService {
 
     @Scheduled(fixedRate = 60000)
     public void run(){
-
         log.info("Scheduled FlatBot Task started");
 
-        FilteredAds filteredAds = adService.filterAds(
-                scanService.scanAds()
-        );
+        Set<Ad> allPresentAds = scanService.scanAds();
+        FilteredAds filteredAds = adService.filterAds(allPresentAds);
 
         adService.saveNewAds(
                 filteredAds.getNewAds()
@@ -39,6 +39,9 @@ public class ScheduledTaskService {
             telegramAlertService.sendAds(
                     filteredAds.getNewAds(),
                     filteredAds.getAdjustedPriceAds()
+            );
+            telegramAlertService.sendDeletedAds(
+                    adService.removeOldAds(allPresentAds)
             );
         } catch (TelegramApiException | InterruptedException e) {
             log.error("Fatal error sending Telegram alerts");
