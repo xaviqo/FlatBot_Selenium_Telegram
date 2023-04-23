@@ -58,7 +58,7 @@ public class Ad {
                 getRooms(),
                 getType(),
                 getSquareMeters(),
-                .get             getLastPriceDrop(),
+                getLastPriceDrop(),
                 getTotalPriceDrop(),
                 getLink()
         );

@@ -22,7 +22,7 @@ public class ScanService {
 
     public Set<Ad> scanAds(){
 
-        ChromeDriver driver = DriverSingletonInstance();
+        ChromeDriver driver = DriverSingleton.getInstance();
         String urlToScan = ScannerConfiguration.getUrlToScan();
 
         driver.get(urlToScan);
