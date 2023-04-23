@@ -1,10 +1,10 @@
-package tech.xavi.realista;
+package tech.xavi.flatbot;
 
 import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import tech.xavi.realista.service.ScheduledTaskService;
+import tech.xavi.flatbot.service.ScheduledTaskService;
 
 @AllArgsConstructor
 @SpringBootApplication

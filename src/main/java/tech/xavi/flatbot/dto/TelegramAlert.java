@@ -1,4 +1,4 @@
-package tech.xavi.realista.dto;
+package tech.xavi.flatbot.dto;
 
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 

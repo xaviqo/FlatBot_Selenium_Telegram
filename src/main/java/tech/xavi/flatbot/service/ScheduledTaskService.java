@@ -1,10 +1,10 @@
-package tech.xavi.realista.service;
+package tech.xavi.flatbot.service;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
-import tech.xavi.realista.dto.FilteredAds;
+import tech.xavi.flatbot.dto.FilteredAds;
 
 @Service
 @Slf4j

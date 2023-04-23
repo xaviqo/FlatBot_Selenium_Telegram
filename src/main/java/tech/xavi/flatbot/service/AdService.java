@@ -1,4 +1,4 @@
-package tech.xavi.realista.service;
+package tech.xavi.flatbot.service;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -6,11 +6,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.springframework.stereotype.Service;
-import tech.xavi.realista.dto.FilteredAds;
-import tech.xavi.realista.entity.Ad;
-import tech.xavi.realista.entity.PropertyType;
-import tech.xavi.realista.repository.AdRepository;
-import tech.xavi.realista.util.IdGenerator;
+import tech.xavi.flatbot.dto.FilteredAds;
+import tech.xavi.flatbot.entity.Ad;
+import tech.xavi.flatbot.entity.PropertyType;
+import tech.xavi.flatbot.repository.AdRepository;
+import tech.xavi.flatbot.util.IdGenerator;
 
 import java.util.HashSet;
 import java.util.List;

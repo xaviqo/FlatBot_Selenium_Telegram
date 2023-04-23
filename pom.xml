@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>tech.xavi</groupId>
-    <artifactId>realista</artifactId>
+    <artifactId>flatbot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>realista</name>
-    <description>realista</description>
+    <name>flatbot</name>
+    <description>flatbot</description>
     <properties>
         <java.version>17</java.version>
     </properties>

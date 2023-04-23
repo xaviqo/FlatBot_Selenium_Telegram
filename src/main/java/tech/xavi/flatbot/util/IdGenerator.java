@@ -1,4 +1,4 @@
-package tech.xavi.realista.util;
+package tech.xavi.flatbot.util;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

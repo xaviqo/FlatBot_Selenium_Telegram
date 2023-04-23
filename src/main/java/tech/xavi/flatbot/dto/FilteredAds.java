@@ -1,7 +1,7 @@
-package tech.xavi.realista.dto;
+package tech.xavi.flatbot.dto;
 
 import lombok.Data;
-import tech.xavi.realista.entity.Ad;
+import tech.xavi.flatbot.entity.Ad;
 
 import java.util.HashSet;
 import java.util.Set;

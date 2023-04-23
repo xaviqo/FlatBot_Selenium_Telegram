@@ -1,4 +1,4 @@
-package tech.xavi.realista.scanner;
+package tech.xavi.flatbot.scanner;
 
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.chrome.ChromeDriver;

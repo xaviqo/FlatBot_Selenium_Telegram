@@ -1,4 +1,4 @@
-package tech.xavi.realista.entity;
+package tech.xavi.flatbot.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

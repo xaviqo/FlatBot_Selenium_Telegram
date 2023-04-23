@@ -1,10 +1,10 @@
-package tech.xavi.realista.repository;
+package tech.xavi.flatbot.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import tech.xavi.realista.entity.Ad;
+import tech.xavi.flatbot.entity.Ad;
 
 @Repository
 public interface AdRepository extends JpaRepository<Ad,String> {
