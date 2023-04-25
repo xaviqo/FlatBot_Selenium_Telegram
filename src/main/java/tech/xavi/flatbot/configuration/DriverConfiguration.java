@@ -12,7 +12,7 @@ public class DriverConfiguration {
     public static ChromeDriver getDriver(){
         try {
             System.setProperty("webdriver.http.factory", "jdk-http-client");
-            System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
+            System.setProperty("webdriver.chrome.driver", "./driver/chromedriver_arm");
 
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--disable-blink-features=AutomationControlled");
@@ -33,7 +33,7 @@ public class DriverConfiguration {
             return driver;
         } catch (Exception exception){
             log.error("Exception configuring WebDriver");
-            exception.getStackTrace();
+            exception.printStackTrace();
         }
         return null;
     }
